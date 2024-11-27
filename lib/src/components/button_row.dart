@@ -14,30 +14,33 @@ class ButtonRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final localizations = MaterialLocalizations.of(context);
 
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Expanded(
-          child: TextButton(
-            onPressed: onCancelPressed,
-            child: Text(
-              localizations.cancelButtonLabel,
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Expanded(
+            child: TextButton(
+              onPressed: onCancelPressed,
+              child: Text(
+                localizations.cancelButtonLabel,
+              ),
             ),
           ),
-        ),
-        const SizedBox(
-          height: 20,
-          child: VerticalDivider(),
-        ),
-        Expanded(
-          child: TextButton(
-            onPressed: onSavePressed,
-            child: Text(
-              localizations.okButtonLabel,
+          const SizedBox(
+            height: 20,
+            child: VerticalDivider(),
+          ),
+          Expanded(
+            child: TextButton(
+              onPressed: onSavePressed,
+              child: Text(
+                localizations.okButtonLabel,
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
